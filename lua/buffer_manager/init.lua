@@ -51,6 +51,8 @@ function M.setup(config)
     short_term_names = false,
     highlight = "Normal",
     win_extra_options = {},
+    title_highlight = 'BufferManagerTitle',
+    border_highlight = 'BufferManagerBorder',
   }
 
   local complete_config = merge_tables(default_config, config)
