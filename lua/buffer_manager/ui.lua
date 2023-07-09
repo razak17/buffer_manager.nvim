@@ -55,9 +55,9 @@ local function create_window()
   local bufnr = vim.api.nvim_create_buf(false, false)
 
   local win_config = {
-    title = "Buffers",
-    highlight = config.highlight,
-    titlehighlight = config.title_highlight,
+    title = "BufferManager",
+    highlight = 'BufferManagerWindow',
+    titlehighlight = 'BufferManagerTitle',
     line = math.floor(((vim.o.lines - height) / 2) - 1),
     col = math.floor((vim.o.columns - width) / 2),
     minwidth = width,
@@ -70,7 +70,7 @@ local function create_window()
   vim.api.nvim_win_set_option(
     win.border.win_id,
     "winhl",
-    config.highlight .. ":" .. config.border_highlight
+    "Normal:BufferManagerBorder"
   )
 
   return {
