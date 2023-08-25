@@ -53,6 +53,8 @@ function M.setup(config)
     highlight = "",
     win_extra_options = {},
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    title_highlight = 'BufferManagerTitle',
+    border_highlight = 'BufferManagerBorder',
   }
 
   local complete_config = merge_tables(default_config, config)
