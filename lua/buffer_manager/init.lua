@@ -50,7 +50,11 @@ function M.setup(config)
     short_file_names = false,
     short_term_names = false,
     loop_nav = true,
+    highlight = "",
     win_extra_options = {},
+    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    title_highlight = 'BufferManagerTitle',
+    border_highlight = 'BufferManagerBorder',
   }
 
   local complete_config = merge_tables(default_config, config)
