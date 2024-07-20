@@ -104,6 +104,9 @@ require("buffer_manager").setup({ })
 * `highlight`: highlight for the window. Format: `from1:to1,from2:to2`. E.g. `Normal:MyCustomNormal`. (See `:help winhighlight`.)
 * `win_extra_options`: extra options for the menu window. E.g. `{ relativenumber = true }`. (See `:help option-list`.)
 * `borderchars`: border characters for the menu window.
+* `format_function`: support for custom function to format buffer names. The function should receive a string and return a string. This option is incompatible with `short_file_names`. To use it, `short_file_names` must be set to `false`. By default, the function is `nil`, which means no special formatting is applied.
+* `order_buffers`: order the buffers in the menu. Options are `"filename"`, `"bufnr"` and `"lastused"`. By default, it is `nil`, which means the buffers are not automatically ordered. If `reverse` is added to the option, the buffers are ordered in reverse order. For example, `order_buffers = 'filename:reverse'`.
+* `show_indicators`: show indicators for buffers in virtual text. See `:help ls` for more information about indicators. Possible values are `"before"` (before filename) and `"after"` (after filename). When set to `nil`, no indicators are shown.
 
 
 In addition, you can specify a custom color for the modified buffers, by setting the highlight group `BufferManagerModified` to the desired color. For example:
@@ -129,6 +132,9 @@ vim.api.nvim_set_hl(0, "BufferManagerModified", { fg = "#0000af" })
     highlight = "",
     win_extra_options = {},
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    format_function = nil,
+    order_buffers = nil,
+    show_indicators = nil,
   }
 ```
 

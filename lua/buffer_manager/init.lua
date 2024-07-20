@@ -53,6 +53,9 @@ function M.setup(config)
     highlight = "",
     win_extra_options = {},
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    format_function = nil,
+    order_buffers = nil,
+    show_indicators = nil,
     title_highlight = 'BufferManagerTitle',
     border_highlight = 'BufferManagerBorder',
   }
