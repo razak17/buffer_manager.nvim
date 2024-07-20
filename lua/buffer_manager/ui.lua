@@ -55,6 +55,7 @@ local function create_window()
 
   local win_config = {
     title = "Buffers",
+    titlehighlight = config.title_highlight,
     line = math.floor(((vim.o.lines - height) / 2) - 1),
     col = math.floor((vim.o.columns - width) / 2),
     minwidth = width,
@@ -66,7 +67,7 @@ local function create_window()
   if config.highlight ~= "" then
     vim.api.nvim_set_option_value(
       "winhighlight",
-      config.highlight,
+      config.highlight .. ":" .. config.border_highlight,
       { win = win.border.win_id }
     )
   end
